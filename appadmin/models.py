@@ -1,5 +1,5 @@
 from django.db import models
-
+from buisnessuser.models import Professional_user
 # Create your models here.
 class CustomDateTimeField(models.DateTimeField):
     def value_to_string(self, obj):
@@ -33,4 +33,14 @@ class Business_Service(models.Model):
 
     def __str__(self):
         st = "%s - %s(%s)" % (self.id, self.name, self.Business_category)
+        return st
+
+class Business_Service_info(models.Model):
+    info_id = models.AutoField(primary_key=True)
+    ServiceProvider_id = models.ForeignKey(Professional_user, on_delete=models.CASCADE)
+    service_info = models.ForeignKey(Business_Service, on_delete=models.CASCADE)
+    service_price = models.IntegerField(default=0)
+    Profession_Experience = models.IntegerField(default=0)
+    def __str__(self):
+        st = "%s - %s(%s)" % (self.info_id, self.ServiceProvider_id, self.service_info)
         return st

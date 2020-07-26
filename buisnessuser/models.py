@@ -1,7 +1,15 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
-from appadmin.models import CustomDateTimeField
+
 # Create your models here.
+class CustomDateTimeField(models.DateTimeField):
+    def value_to_string(self, obj):
+        val = self.value_from_object(obj)
+        if val:
+            val.replace(microsecond=0)
+            return val.isoformat()
+        return ''
+
 class Professional_user(models.Model):
     user_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=30)
@@ -29,3 +37,6 @@ class Professional_user(models.Model):
     token = models.CharField(max_length=200, default="")
     account_creation = CustomDateTimeField(auto_now_add=True)
     last_login = models.DateTimeField()
+    def __str__(self):
+        st = "%s - %s(%s)" % (self.user_id, self.email, self.city)
+        return st
