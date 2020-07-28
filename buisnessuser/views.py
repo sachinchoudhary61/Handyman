@@ -26,7 +26,7 @@ def signup(request):
         f = form.save(commit=False)
 
         # f.IMg_name = user_image
-        f.user_Img = user_image1
+        f.user_Img = user_image
         f.first_name = request.POST["first_name"]  # column name
         f.last_name = request.POST["last_name"]
         f.is_active = False
