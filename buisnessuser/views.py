@@ -46,7 +46,7 @@ def signup(request):
         f.account_creation = time_gen()
         f.last_login = time_gen()
         f.is_professional_user = True
-        token = f.OTP+time_gen()
+        token = f.otp+time_gen()
         link = 'https://guarded-thicket-09826.herokuapp.com/activeness/?token='+str(token)+'&email='+f.email
         f.token = token
 
