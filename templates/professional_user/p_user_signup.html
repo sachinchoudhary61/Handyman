@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Registeration</title>
+</head>
+<body>
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+    <label>first Name</label>
+    <input type="text" name="first_name"><br>
+    <label>last Name</label>
+    <input type="text" name="last_name"><br>
+    <label>Image</label>
+    <button type="submit" name="user_image">Upload</button><br>
+    <label>Email</label>
+    <input type="text" name="email_id"><br>
+    <label>Password</label>
+    <input type="text" name="password"><br>
+    <label>Confirm-Password</label>
+    <input type="text" name="confirm_password"> <br>
+    <label>Contact No.</label>
+    <input type="number" name="c_number"><br>
+    <label>CITY</label>
+    <select name="my_field">
+    <option value="" selected="selected">-----</option>
+    {% for choice in choices %}
+        <option value="{{ choice }}">{{ choice }}</option>
+    {% endfor %}
+    </select><br>
+    <label>ADDRESS</label>
+    <input type="text" name="address"><br>
+    <input type="submit" VALUE="SUBMIT">
+    </form>
+</body>
+</html>
