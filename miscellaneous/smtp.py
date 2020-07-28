@@ -11,6 +11,6 @@ def smtp(name,l,otp,email):
 
     server = smtplib.SMTP("smtp.gmail.com", 587)
     server.starttls()
-    server.login('stheartsachu@gmail.com', 'sachu20529')
-    server.sendmail('stheartsachu@gmail.com', email, msg)
+    server.login('godhelpmetogrow@gmail.com', 'sachu123@')
+    server.sendmail('godhelpmetogrow@gmail.com', email, msg)
     server.quit()
