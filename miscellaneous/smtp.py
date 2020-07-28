@@ -1,4 +1,4 @@
-import smtplib
+import smtplib , ssl
 from django.shortcuts import HttpResponse
 def smtp(name,l,otp,email):
     msg = "--*---*------WELCOME TO OUR HandyMan -----*---*--\n\n\n" \
@@ -14,9 +14,18 @@ def smtp(name,l,otp,email):
     # server.login('godhelpmetogrow@gmail.com', 'sachu123@')
     # server.sendmail('godhelpmetogrow@gmail.com', email, msg)
     # server.quit()
-    # ('mail.your-domain.com', 25)
-    try:
-       smtpObj = smtplib.SMTP('mail.https://guarded-thicket-09826.herokuapp.com', 25)
-       smtpObj.sendmail('godhelpmetogrow@gmail.com', email, msg)
-    except smtplib.SMTPException:
-       return HttpResponse("<h1>Error: unable to send email</h1>")
+
+
+    port = 587  # For starttls
+    smtp_server = "smtp.gmail.com"
+    sender_email = "godhelpmetogrow@gmail.com"
+    receiver_email = email
+    password = 'sachu123@'
+
+    context = ssl.create_default_context()
+    with smtplib.SMTP(smtp_server, port) as server:
+        server.ehlo()  # Can be omitted
+        server.starttls(context=context)
+        server.ehlo()  # Can be omitted
+        server.login(sender_email, password)
+        server.sendmail(sender_email, receiver_email, msg)
