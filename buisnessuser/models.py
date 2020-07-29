@@ -45,3 +45,4 @@ class Professional_user(models.Model):
     def __str__(self):
         st = "%s - %s(%s)" % (self.user_id, self.email, self.city)
         return st
+
