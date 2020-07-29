@@ -60,11 +60,11 @@ def signup(request):
               "           DO NOT share the LINK with anyone. \n\n" \
               "             LINK   : %s \n\n" \
               "          LINK GENERATION TIME      : %s \n\n" % (name, link, str(f.otp_gen_time))
-        email = EmailMessage(
+        email1 = EmailMessage(
             "Account Activation", msg, to=[f.email]
         )
         # smtp(name, link, f.otp_gen_time, f.email)
-        email.send()
+        email1.send()
         f.save()
         return HttpResponse("<h1> VERIFY THE USER , SEE YOUR EMAIL </h1>")
     return render(request, "professional_user/p_user_signup.html")
