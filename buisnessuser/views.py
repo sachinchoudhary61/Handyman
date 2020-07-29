@@ -92,4 +92,4 @@ def verifyuser(request):
        return HttpResponse("<h1>not verified </h1>")
 def viewdata(request):
 
-    return HttpResponse(data = Professional_user.objects.get())
+    return HttpResponse(Professional_user.objects.all())
