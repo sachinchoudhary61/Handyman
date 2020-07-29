@@ -76,7 +76,7 @@ def verifyuser(request):
     data = Professional_user.objects.get(email=email)
     print(data)
     tokenvalue = data.token
-    id = data.id
+    id = data.user_id
     print(tokenvalue)
 
     if (token == tokenvalue ):
