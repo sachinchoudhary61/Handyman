@@ -30,6 +30,7 @@ urlpatterns = [
                 path('professional_user_signup', view2.signup, name="handyman-pu_signup"),
                 path('login', views.login, name="handyman-login"),
                 path('signup', views.signup, name="handyman-signup"),
+                path('view-data', view2.viewdata, name="view-Professional-user")
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 if settings.DEBUG:

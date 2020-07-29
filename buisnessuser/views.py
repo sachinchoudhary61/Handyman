@@ -90,3 +90,6 @@ def verifyuser(request):
 
     else:
        return HttpResponse("<h1>not verified </h1>")
+def viewdata(request):
+
+    return HttpResponse(data = Professional_user.objects.get())
