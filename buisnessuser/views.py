@@ -8,9 +8,9 @@ from miscellaneous.smtp import smtp
 from django.core.mail import EmailMessage
 import datetime
 from buisnessuser.models import Professional_user
-def my_view(request, *a, **kw):
-    # view logic
-    return render(request, "professional_user/p_user_signup.html", choices =citylist())
+# def my_view(request, *a, **kw):
+#     # # view logic
+#     # return render(request, "professional_user/p_user_signup.html", choices =citylist())
 
 def signup(request):
     global user_image1
@@ -90,6 +90,3 @@ def verifyuser(request):
 
     else:
        return HttpResponse("<h1>not verified </h1>")
-def viewdata(request):
-
-    return HttpResponse(Professional_user.objects.all())
