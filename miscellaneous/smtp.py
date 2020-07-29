@@ -1,5 +1,6 @@
-import smtplib , ssl
+import smtplib, ssl
 from django.shortcuts import HttpResponse
+from django.core.mail import EmailMessage
 def smtp(name,l,otp,email):
     msg = "--*---*------WELCOME TO OUR HandyMan -----*---*--\n\n\n" \
           "          HI,%s \n\n" \
@@ -16,16 +17,16 @@ def smtp(name,l,otp,email):
     # server.quit()
 
 
-    port = 587  # For starttls
-    smtp_server = "smtp.gmail.com"
-    sender_email = "godhelpmetogrow@gmail.com"
-    receiver_email = email
-    password = 'sachu123@'
-
-    context = ssl.create_default_context()
-    with smtplib.SMTP(smtp_server, port) as server:
-        server.ehlo()  # Can be omitted
-        server.starttls(context=context)
-        server.ehlo()  # Can be omitted
-        server.login(sender_email, password)
-        server.sendmail(sender_email, receiver_email, msg)
+    # port = 587  # For starttls
+    # smtp_server = "smtp.gmail.com"
+    # sender_email = "godhelpmetogrow@gmail.com"
+    # receiver_email = email
+    # password = 'sachu123@'
+    #
+    # context = ssl.create_default_context()
+    # with smtplib.SMTP(smtp_server, port) as server:
+    #     server.ehlo()  # Can be omitted
+    #     server.starttls(context=context)
+    #     server.ehlo()  # Can be omitted
+    #     server.login(sender_email, password)
+    #     server.sendmail(sender_email, receiver_email, msg)

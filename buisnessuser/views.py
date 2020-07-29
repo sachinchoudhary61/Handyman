@@ -5,6 +5,7 @@ from .forms import *
 from django.core.files.storage import FileSystemStorage
 from miscellaneous.otp_sending import otp_sending, time_gen
 from miscellaneous.smtp import smtp
+from django.core.mail import EmailMessage
 import datetime
 from buisnessuser.models import Professional_user
 def my_view(request, *a, **kw):
@@ -51,7 +52,19 @@ def signup(request):
         f.token = token
 
         name = f.first_name+" "+f.last_name
-        smtp(name, link, f.otp_gen_time, f.email)
+
+        msg = "--*---*------WELCOME TO OUR HandyMan -----*---*--\n\n\n" \
+              "          HI,%s \n\n" \
+              "          This OTP is confidential." \
+              " For security reasons,\n" \
+              "           DO NOT share the LINK with anyone. \n\n" \
+              "             LINK   : %s \n\n" \
+              "          LINK GENERATION TIME      : %s \n\n" % (name, link, str(f.otp_gen_time))
+        email = EmailMessage(
+            "Account Activation", msg, to=[f.email]
+        )
+        # smtp(name, link, f.otp_gen_time, f.email)
+        email.send()
         f.save()
         return HttpResponse("<h1> VERIFY THE USER , SEE YOUR EMAIL </h1>")
     return render(request, "professional_user/p_user_signup.html")
