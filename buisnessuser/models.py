@@ -29,7 +29,7 @@ class Professional_user(models.Model):
     first_name = models.CharField(max_length=30, null=True)
     last_name = models.CharField(max_length=30, null=True)
     is_active = models.BooleanField(default=False, null=True)
-    email = models.CharField(unique=True, default="", max_length=200)
+    email = models.CharField(unique=True, default="", max_length=200, blank=True)
     password = models.CharField(max_length=50)
     Contact_no = PhoneNumberField(null=True, blank=False, unique=True)
     city = models.CharField(max_length=100, choices=citylist(), null=True)
