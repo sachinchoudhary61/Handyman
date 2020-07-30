@@ -4,7 +4,6 @@ from django.shortcuts import render, redirect, HttpResponse
 from .forms import *
 from django.core.files.storage import FileSystemStorage
 from miscellaneous.otp_sending import otp_sending, time_gen
-from miscellaneous.smtp import smtp
 from django.core.mail import EmailMessage
 import datetime
 from buisnessuser.models import Professional_user
@@ -90,3 +89,32 @@ def verifyuser(request):
 
     else:
        return HttpResponse("<h1>not verified </h1>")
+
+def login(request):
+    if request.method == "POST":
+        un = request.POST["email"]
+        up = request.POST["password"]
+        try:
+            data = Professional_user.objects.get(email=un)
+
+        except:
+            return render(request, "login.html", {'emailerror': True})
+
+        dp = data.password
+        active = data.is_active
+        professional_user = data.is_professional_user
+
+        if (active == False):
+            return render(request, "login.html", {'activeerror': True})
+
+        else:
+            if (dp == up):
+                request.session['email'] = un
+                request.session['Authentication'] = True
+                if professional_user is True:
+                    return HttpResponse("<h1> Welcome to the Professional user page</h1>")
+                else:
+                    return HttpResponse("<h1> Normal User page</h1>")
+            else:
+                return render(request, "login.html", {'passworderror': True})
+    return render(request, "professional_user/login.html")
