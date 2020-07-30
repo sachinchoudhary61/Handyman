@@ -105,7 +105,7 @@ def login(request):
         professional_user = data.is_professional_user
 
         if (active == False):
-            return render(request, "login.html", {'activeerror': True})
+            return render(request, "professional_user/login.html", {'activeerror': True})
 
         else:
             if (dp == up):
