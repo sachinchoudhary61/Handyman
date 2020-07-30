@@ -98,7 +98,7 @@ def login(request):
             data = Professional_user.objects.get(email=un)
 
         except:
-            return render(request, "login.html", {'emailerror': True})
+            return render(request, "professional_user/login.html", {'emailerror': True})
 
         dp = data.password
         active = data.is_active
