@@ -7,17 +7,17 @@
 <body>
 <form method="post">
     {% csrf_token %}
-    <label>email</label>
-    <input type="text" name="email"/>
-    {% if emailerror %}
+    <label>email/Password</label>
+    <input type="text" name="un"/>
+    {% if email_error %}
     <script> alert("email is wrong")</script>
     {% endif %}
     <label>password</label>
     <input type="text" name="password"/>
-    {% if passworderror %}
+    {% if password_error %}
     <script>alert ("password is wrong")</script>
     {% endif %}
-    {% if activeerror %}
+    {% if active_error %}
     <script>alert ("you are not activate currently<br> Check your email")</script>
     {% endif %}
     <br/>

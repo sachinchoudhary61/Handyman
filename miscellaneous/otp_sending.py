@@ -1,4 +1,3 @@
-import smtplib
 import datetime
 import uuid
 
@@ -9,6 +8,7 @@ def otp_sending():
     randomString = uuid.uuid4().hex  # get a random string in a UUID fromat
     randomString = randomString.upper()[0:stringLength]  # convert it in a uppercase letter and trim to your size.
     return randomString
+
 
 def time_gen():
 
