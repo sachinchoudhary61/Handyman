@@ -1,0 +1,105 @@
+body {
+  background: #fafafa;
+  color: #333333;
+  margin-top: 56px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #444444;
+}
+
+ul {
+  margin: 0;
+}
+
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+
+.content-section{
+  background: #ffffff;
+  padding: 10px 20px;
+  margin-bottom: 0px;
+}
+
+
+
+/* Navbar CSS */
+
+.navbar-custom-bg-color{
+    background-color: #232323;
+}
+
+/* Login Page CSS */
+
+.border-bottom-custom-css{
+  padding-bottom: .5rem;
+}
+
+.content-section-bg-image{
+  background: url("https://www.buildeeji.com/UploadedFiles/SERVICE_SLIDEIMAGES/SR016552/interior-Painting-Services.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  width: 100%;
+}
+
+.custom-input-field-css{
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: #f6f6f6;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+.custom-login-btn-css{
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: #1c1c1c;
+  border: none;
+  color: white;
+  outline: none;
+  width: 100%;
+}
+
+
+.create-account-btn-txt{
+  font-size: 1.2rem;
+  color: white;
+}
+
+.create-account-btn {
+  font-size: 1rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: none;
+  color: #151515;
+  outline: none;
+  width: 100%;
+  font-weight: bolder;
+  border-radius: 10rem;
+  -webkit-border-radius: 10rem;
+  -moz-border-radius: 10rem;
+  -ms-border-radius: 10rem;
+  -o-border-radius: 10rem;
+}
+
+.custom-margin-4rem{
+  margin-top: 4rem;
+}
+
+.custom-padding-top-4rem{
+  padding-top: 4rem;
+}

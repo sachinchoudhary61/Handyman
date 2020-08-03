@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css" integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css'%}">
       {% if title %}
         <title>Handyman - {{title}}</title>
       { % else %}
@@ -17,7 +17,7 @@
   </head>
   <body>
 <header class="site-header">
-  <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top navbar-custom-bg-color">
     <div class="container">
       <a class="navbar-brand mr-4" href="/">Handyman</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,9 +40,9 @@
   </nav>
 </header>
 
-<main role="main" class="container">
-  <div class="row">
-    <div class="col-md-8">
+<main role="main" class="-fliud-container">
+
+    <div class="fluid-container">
       {% if messages %}
       {% for message in messages %}
       <div class="alert alert-{{ message.tags}}">

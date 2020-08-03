@@ -1,31 +1,71 @@
 {% extends "base/base.html" %}
 {% block content %}
-    <div class="content-section">
-        <form method="post">
-            {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Login</legend>
 
-                <div class="row">
-                    <div class="col-md"><input  type="text" placeholder="Enter Email"></div>
-                    <div class="col-md"><input  type="text" placeholder="Password"></div>
+<div class="container-fliud content-section-bg-image">
+
+
+    <div class="container">
+        <div class="row custom-padding-top-4rem">
+          <div class="col-md-4">
+            <div class="content-section">
+                <form method="post">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4 border-bottom-custom-css">Login to Your Account</legend>
+        
+
+                        <div class="input-group mb-3">
+                           
+                            <input  type="text" class="custom-input-field-css" placeholder="Email or Phone">
+                          </div>
+                          
+                          <div class="input-group mb-3">
+                            <input  type="text" class="custom-input-field-css" placeholder="Password">
+                         
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <button class="custom-login-btn-css" type="submit">Login</button>
+                         
+                          </div>
+
+        
+        
+        
+        
+                    </fieldset>
+        
+                 
+                </form>
+        
+                <div class="border-top pt-3">
+                    <small class="text-muted">Need Help ? <a class="ml-2" href="{% url 'handyman-signup' %}">Forgot Password</a>
+                    </small>
                 </div>
-
-
-
-
-            </fieldset>
-
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Login</button>
+        
             </div>
-        </form>
 
-        <div class="border-top pt-3">
-            <small class="text-muted">Need an account ? <a class="ml-2" href="{% url 'handyman-signup' %}">Sign Up</a>
-            </small>
+            <div class="container-fliud custom-margin-4rem">
+
+                <h1 class="create-account-btn-txt">Make Account to Get Service or For Your Bussniess and grow fast.</h1>
+
+                <button class="create-account-btn">Create New Account</button>
+
+            </div>
+
+          </div>
+          <div class="col-md-4 col-sm-1">
+           
+          </div>
+          <div class="col-md-4 col-sm-1">
+            
+          </div>
         </div>
+      </div>
 
-    </div>
+      
+
+</div>
+    
 
 {% endblock content %}
