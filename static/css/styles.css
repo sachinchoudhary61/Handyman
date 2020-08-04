@@ -41,6 +41,12 @@ ul {
   margin-bottom: 0px;
 }
 
+/* Removed Border/ Outline from Bootstrap */
+
+button:focus{
+  outline: none;
+}
+
 
 
 /* Navbar CSS */
@@ -57,6 +63,16 @@ ul {
 }
 
 .content-section-bg-image{
+  background: url("https://www.buildeeji.com/UploadedFiles/SERVICE_SLIDEIMAGES/SR016552/interior-Painting-Services.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+}
+
+.content-section-bg-image-for-2login{
   background: url("https://www.buildeeji.com/UploadedFiles/SERVICE_SLIDEIMAGES/SR016552/interior-Painting-Services.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -138,4 +154,19 @@ ul {
 
 .custom-padding-top-4rem{
   padding-top: 4rem;
+}
+
+.custom-padding-bottom-4rem{
+  padding-bottom: 4rem;
+}
+
+
+/* Professional/ Business Sign Up Page CSS */
+
+.content-section-professional-signup-bg-image{
+  background: url("https://miro.medium.com/max/4000/1*KvuQ_aU-CHD1rfi7BxxmSw.jpeg");
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+  width: 100%;
 }

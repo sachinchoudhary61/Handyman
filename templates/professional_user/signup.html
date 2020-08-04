@@ -1,36 +1,93 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>User Registeration</title>
-</head>
-<body>
-    <form method = "post" enctype="multipart/form-data">
-        {% csrf_token %}
-    <label>first Name</label>
-    <input type="text" name="first_name"><br>
-    <label>last Name</label>
-    <input type="text" name="last_name"><br>
-    <label for="user_image">Select a file:</label>
-    <input type="file" id="user_image" name="user_image"><br><br>
-    <label>Email</label>
-    <input type="text" name="email_id"><br>
-    <label>Password</label>
-    <input type="text" name="password"><br>
-    <label>Confirm-Password</label>
-    <input type="text" name="confirm_password"> <br>
-    <label>Contact No.</label>
-    <input type="number" name="c_number"><br>
-    <label>CITY</label>
-    <select name="my_field">
-    <option value="" selected="selected">-----</option>
-    {% for choice in choices %}
-        <option value="{{ choice }}">{{ choice }}</option>
-    {% endfor %}
-    </select><br>
-    <label>ADDRESS</label>
-    <input type="text" name="address"><br>
-    <input type="submit" VALUE="SUBMIT">
-    </form>
-</body>
-</html>
+{% extends "base/base.html" %}
+{% block content %}
+
+
+<div class="container-fliud content-section-professional-signup-bg-image">
+
+
+    <div class="container">
+        <div class="row custom-padding-top-4rem custom-padding-bottom-4rem">
+          <div class="col-md-4">
+            <div class="content-section">
+                        
+                <form method = "post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4 border-bottom-custom-css">Create Business Account</legend>
+        
+
+                        <div class="input-group mb-3">
+                            <input type="text" class="custom-input-field-css" name="first_name" placeholder="Full Name">
+                          </div>
+                          
+                           
+                          <div class="input-group mb-3">
+                            <input type="text" name="email_id" class="custom-input-field-css" placeholder="Email">
+                          </div>
+
+                           
+                          <div class="input-group mb-3">
+                            <input type="text" name="password" class="custom-input-field-css" placeholder="Password">
+                          </div>
+
+                           
+                          <div class="input-group mb-3">
+                            <input type="text" name="confirm_password" class="custom-input-field-css" placeholder="Confirm Password">
+                          </div>
+
+                           
+                          <div class="input-group mb-3">
+                            <input type="number" name="c_number" class="custom-input-field-css" placeholder="Phone">
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <select name="my_field" class="custom-input-field-css">
+                                <option value="" selected="selected">City</option>
+                                {% for choice in choices %}
+                                    <option  value="{{ choice }}">{{ choice }}</option>
+                                {% endfor %}
+                                </select>
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <textarea type="text" name="address" class="custom-input-field-css" placeholder="Address"></textarea>
+                          </div>
+                          
+
+                          <div class="input-group mb-3">
+                            <button class="custom-login-btn-css" type="submit">Sign Up</button>
+                         
+                          </div>
+
+        
+                    </fieldset>
+        
+                 
+                </form>
+        
+                <div class="pt-3 text-center">
+                  <p><a href="#">Read Terms and Conditions, Before Sign up</a></p>
+                </div>
+        
+            </div>
+
+           
+
+          </div>
+          <div class="col-md-2 col-sm-1">
+          
+          </div>
+          <div class="col-md-6 col-sm-1">
+            
+          
+          </div>
+        </div>
+      </div>
+
+      
+
+</div>
+
+
+
+{% endblock content %}
