@@ -86,7 +86,7 @@ def verifyuser(request):
 
 def login(request):
     if request.method == "POST":
-        username = request.POST["email"]
+        username = request.POST["un"]
         up = request.POST["password"]
         try:
             data1 = Professional_user.objects.get(email=username)
