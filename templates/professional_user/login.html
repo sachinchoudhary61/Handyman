@@ -1,29 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>loginpage</title>
-</head>
-<body>
-<form method="post">
-    {% csrf_token %}
-    <label>email/Password</label>
-    <input type="text" name="un"/>
-    {% if email_error %}
-    <script> alert("email is wrong")</script>
-    {% endif %}
-    <label>password</label>
-    <input type="text" name="password"/>
-    {% if password_error %}
-    <script>alert ("password is wrong")</script>
-    {% endif %}
-    {% if active_error %}
-    <script>alert ("you are not activate currently<br> Check your email")</script>
-    {% endif %}
-    <br/>
-    <input type="submit" value="login "/>
+{% extends "base/base.html" %}
+{% block content %}
+
+<div class="container-fliud content-section-bg-image-for-2login">
 
 
-</form>
-</body>
-</html>
+    <div class="container">
+        <div class="row custom-padding-top-4rem  custom-padding-bottom-4rem">
+          <div class="col-md-4">
+            <div class="content-section">
+                <form method="post">
+                    {% csrf_token %}
+                    <fieldset class="form-group">
+                        <legend class="border-bottom mb-4 border-bottom-custom-css">Business Account Login</legend>
+        
+
+                        <div class="input-group mb-3">
+                            <input type="text" name="un" class="custom-input-field-css" placeholder="Email or Phone"/>
+                            {% if email_error %}
+                            <script> alert("email is wrong")</script>
+                            {% endif %}
+                          </div>
+                          
+                          <div class="input-group mb-3">
+                            <input type="text" name="password" class="custom-input-field-css" placeholder="Password"/>
+                            {% if password_error %}
+                            <script>alert ("password is wrong")</script>
+                            {% endif %}
+                            {% if active_error %}
+                            <script>alert ("you are not activate currently<br> Check your email")</script>
+                            {% endif %}
+                        
+                          </div>
+
+                          <div class="input-group mb-3">
+                            <button class="custom-login-btn-css" type="submit">Login</button>
+                         
+                          </div>
+
+        
+                    </fieldset>
+        
+                 
+                </form>
+        
+                <div class=" pt-3">
+                    <small class="text-muted">Need Help ? <a class="ml-2" href="{% url 'handyman-signup' %}">Forgot Password</a>
+                    </small>
+                </div>
+        
+            </div>
+
+           
+
+          </div>
+          <div class="col-md-4 col-sm-1">
+           
+          </div>
+          <div class="col-md-4 col-sm-1">
+            
+          </div>
+        </div>
+      </div>
+
+      
+
+</div>
+    
+
+{% endblock content %}
+
